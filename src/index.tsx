@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {Provider} from "react-redux";
-import storeAccount from "../src/store/accountStore"
+
+import storeBanck from './stateApp/storeBanck';
+import {Provider} from "react-redux"
+
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={storeAccount}>
-    <App />
-    </Provider>
+  <Provider store={storeBanck}>
+  <App />
+  </Provider>
+    
+    
    
   </React.StrictMode>,
   document.getElementById('root')

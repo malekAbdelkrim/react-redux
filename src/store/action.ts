@@ -1,6 +1,4 @@
-import { Dispatch } from "react"
 export const dispositMoney = (amount : number) => {
-    console.log("disposite money" , amount)
     return {
        
             type : "DEPOSITE",
