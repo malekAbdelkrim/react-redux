@@ -1,17 +1,34 @@
 import {ActionBanck} from "../actions/actionBank";
 import { ActionType } from "../action-type";
 
-const initalSateValue = 0;
+const initalSateValue = {
+    account : 0,
+    message :   ""
+
+};
+
+type initialType = {
+    account : number,
+    message : string
+}
 
 
-const reducerBank = (state : 0 = initalSateValue , action : ActionBanck) => {
+const reducerBank = (state : initialType  = initalSateValue , action : ActionBanck) => {
     switch(action.type){
         case ActionType.DEPOSITE:
-            return state+action.payload
+            return {message : "data added" , account : state.account + action.payload}
+              
+ 
+                
         case ActionType.WITHDRAW:
-            return state - action.payload
+            if(state.account > 0){
+                return {message : "withdraw money" , account : state.account -action.payload}
+             }else{
+               return  {... state , message : "no operation"}
+             }
+           
             case ActionType.BANKRUPT: 
-           return 0 
+           return  {account : 0 , message : "no operation"}
             default:
                 return state
     }

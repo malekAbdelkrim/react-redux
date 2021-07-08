@@ -11,7 +11,8 @@ function App() {
  const amount = useSelector((state : State ) => state.bank)
   return (
     <div className="App">
-      <h1>{amount}</h1>  
+      <h1>{amount.account}</h1>  
+      <h2>{amount.message}</h2>
       <button onClick={() => depositMoney(100)}>deposit</button>
       <button onClick={() => withdrawMoney(10)}>withdraw</button>
       <button onClick={() => bankruptMoney()}>bankdrap</button>
